@@ -290,9 +290,7 @@ export default function TabBarElement({
             tabBarBackground={tabBarBackground}
             shadow={shadow}
           >
-            {state.routes.map(createTab)}
-
-            {/* Animated Dot */}
+            {/* Animated Dot / Background - render first so it's behind the tab buttons */}
             <Dot
               dotCornerRadius={dotCornerRadius}
               topPadding={topPadding}
@@ -315,6 +313,7 @@ export default function TabBarElement({
               width={width}
               height={height}
             />
+            {state.routes.map(createTab)}
           </BottomTabBarWrapper>
         </View>
       )}
